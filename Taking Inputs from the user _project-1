@@ -1,0 +1,63 @@
+package com.example.mpp;
+
+//SOMETIMES IF THE PACKAGE IS NOT CORRECT THN IT GIVES THE ACTIVITY MAIN IS NOT DECLARED  IN ANDROIDMAINFEST.XML 
+//THIS HAPPEND WHN I COPIED A FILE FROM A DIFFRENT PROJECT https://stackoverflow.com/questions/40183700/the-activity-mainactivity-is-not-declared-in-androidmanifest-xml
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface; ///IMPORT AL THE  REQUIRED DEPENDENCIES
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class MainActivity extends AppCompatActivity {
+
+  EditText name,email,password;
+  Button submit;
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+//FINDING ALL THE INPUTS FROM THE PHONE LIKE NAME EXMAL AND PASSWRD
+    name = findViewById(R.id.name);
+    email =findViewById(R.id.email);
+    password = findViewById(R.id.password);
+    submit = findViewById(R.id.submit);
+
+//"setOnClickListener"::: THN PRESS ""ALT+ENTER""  FOR IMPORTING THE DEPENDENCIES
+    submit.setOnClickListener(new View.OnClickListener() { //"onClickListener " used to listen to input and the below lines will store the data in string format
+      @Override
+      public void onClick(View v) {
+        String mName = name.getText().toString();
+        String mEmail = email.getText().toString();
+        String pass = password.getText().toString();
+
+        String title = "Login form";
+        String msg = "Name : "+mName + "\n" + "Email : "+mEmail + "\n"+"Password : "+pass;
+///Read about alert box
+
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle(title)
+                .setMessage(msg)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                  @Override
+                  public void onClick(DialogInterface dialog, int which) {
+
+                    dialog.dismiss();
+
+                  }
+                }).create().show();
+
+
+      }
+    });
+
+  }
+}
+
+
+
+//Find the Xml file from the below repostory
