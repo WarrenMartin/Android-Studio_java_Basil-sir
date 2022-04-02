@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.mpp">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MPP">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+
+
+
+
+
+###########################
+This are al the commands and understanding part
+
+1)android:orientation="vertical" (here vertical means if u add button and all thn everything will be in vertical manner.
+2)<EditText    (Creatig a text content)
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:inputType="textPassword"(Here textpassword will be whn ur filling ur password it will be like this *********)
+        android:hint="Password"/>
+        
+        
+        
+        
+##################################
